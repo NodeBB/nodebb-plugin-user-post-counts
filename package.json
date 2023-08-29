@@ -1,17 +1,17 @@
 {
-  "name": "nodebb-plugin-quickstart",
-  "version": "0.4.3",
-  "description": "A starter kit for quickly creating NodeBB plugins",
+  "name": "nodebb-plugin-user-post-counts",
+  "version": "0.0.1",
+  "description": "This plugin filters and sorts users by posts during a date range",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nodebb/nodebb-plugin-quickstart"
+    "url": "https://github.com/nodebb/nodebb-plugin-user-post-counts"
   },
   "keywords": [
     "nodebb",
     "plugin",
-    "quickstart",
-    "shell"
+    "user",
+    "posts"
   ],
   "husky": {
     "hooks": {
@@ -27,11 +27,11 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nodebb/nodebb-plugin-quickstart/issues"
+    "url": "https://github.com/nodebb/nodebb-plugin-user-post-counts/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {
-    "compatibility": "^3.2.0"
+    "compatibility": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.7.1",
