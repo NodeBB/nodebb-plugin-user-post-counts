@@ -1,9 +1,16 @@
 <div class="d-flex flex-column gap-2 px-lg-4 h-100">
-	<div component="settings/main/header" class="row border-bottom py-2 m-0 sticky-top acp-page-main-header align-items-center">
-		<div class="col-12 col-md-6 px-0 mb-1 mb-md-0">
+	<div component="settings/main/header" class="d-flex justify-content-between flex-wrap border-bottom py-2 m-0 sticky-top acp-page-main-header align-items-center">
+		<div class="px-0 mb-1 mb-md-0">
 			<h4 class="fw-bold tracking-tight mb-0">{title}</h4>
 		</div>
-		<form class="col-md-6 d-flex flex-wrap gap-3 align-sm-items-center justify-content-end" method="GET">
+		<form class="d-flex flex-wrap gap-3 align-sm-items-center justify-content-end" method="GET">
+			<div class="d-flex align-items-center gap-2">
+				<label class="form-label mb-0" for="start">Type</label>
+				<select class="form-select form-select-sm" id="type" name="type">
+					<option value="postcount" {{{ if (type == "postcount") }}}selected{{{ end }}}>Post count</option>
+					<option value="firstpost" {{{ if (type == "firstpost") }}}selected{{{ end }}}>First post</option>
+				</select>
+			</div>
 			<div class="d-flex align-items-center gap-2">
 				<label class="form-label mb-0" for="start">Start</label>
 				<input type="date" class="form-control form-control-sm w-auto" id="start" name="start" value="{start}">
@@ -32,6 +39,7 @@
 							<th data-sort="reputation" class="text-end text-nowrap">[[admin/manage/users:users.reputation]] {{{if sort_reputation}}}<i class="fa fa-sort-{{{if reverse}}}down{{{else}}}up{{{end}}}">{{{end}}}</th>
 							<th data-sort="joindate" class="text-nowrap">[[admin/manage/users:users.joined]] {{{if sort_joindate}}}<i class="fa fa-sort-{{{if reverse}}}down{{{else}}}up{{{end}}}">{{{end}}}</th>
 							<th data-sort="lastonline" class="text-nowrap">[[admin/manage/users:users.last-online]] {{{if sort_lastonline}}}<i class="fa fa-sort-{{{if reverse}}}down{{{else}}}up{{{end}}}">{{{end}}}</th>
+							<th class="text-nowrap">first post</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -94,6 +102,7 @@
 							<td class="text-end" component="user/reputation" data-uid="{users.uid}">{formattedNumber(users.reputation)}</td>
 							<td><span class="timeago" title="{users.joindateISO}"></span></td>
 							<td><span class="timeago" title="{users.lastonlineISO}"></span></td>
+							<td><span class="timeago" title="{users.firstpostISO}"></span></td>
 						</tr>
 						{{{ end }}}
 					</tbody>
