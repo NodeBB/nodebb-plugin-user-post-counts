@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-user-post-counts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This plugin filters and sorts users by posts during a date range",
   "main": "library.js",
   "repository": {
